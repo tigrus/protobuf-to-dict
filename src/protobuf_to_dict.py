@@ -1,3 +1,4 @@
+import sys
 from google.protobuf.message import Message
 from google.protobuf.descriptor import FieldDescriptor
 
@@ -6,6 +7,11 @@ __all__ = ["protobuf_to_dict", "TYPE_CALLABLE_MAP", "dict_to_protobuf", "REVERSE
 
 
 EXTENSION_CONTAINER = '___X'
+
+
+if (sys.version_info > (3, 0)):
+   long = int
+   unicode = str
 
 
 TYPE_CALLABLE_MAP = {
